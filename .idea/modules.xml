@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/mcdondon.iml" filepath="$PROJECT_DIR$/mcdondon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/mcdondon_android.iml" filepath="$PROJECT_DIR$/android/mcdondon_android.iml" />
     </modules>
   </component>
 </project>
