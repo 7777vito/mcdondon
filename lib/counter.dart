@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:mcdondon/global.dart';
+import 'package:flutter/foundation.dart';
 
 class Counter extends StatefulWidget {
   final int itemid;
-  const Counter({Key? key,required this.itemid}):super(key:key);
+  final VoidCallback funtion;
+  const Counter({Key? key,required this.itemid,required this.funtion}):super(key:key);
   @override
-  _CounterState createState() => _CounterState();
+  CounterState createState() => CounterState();
 }
 
-class _CounterState extends State<Counter> {
+class CounterState extends State<Counter> {
   //int ?_count = (shoppingcart[widget.itemid]!=null)?(shoppingcart[widget.itemid]):(0);
+  int number=0;
   @override
+  methodInChild(){setState()=>debugPrint("count child");}
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +24,11 @@ class _CounterState extends State<Counter> {
         GestureDetector(
           onTap: () {
             setState(() {
-              productsList[widget.itemid].amount =(productsList[widget.itemid].amount)!+ 1;
-            });
+              productsList[widget.itemid].amount =
+                  (productsList[widget.itemid].amount)! + 1;
+              widget.funtion();
+            }
+            );
           },
           child: Container(
             padding: const EdgeInsets.all(3.0),
@@ -38,8 +45,13 @@ class _CounterState extends State<Counter> {
         GestureDetector(
           onTap: () {
             setState(() {
-              productsList[widget.itemid].amount=((productsList[widget.itemid].amount)!<=0)?(0):((productsList[widget.itemid].amount)!- 1);
-            });
+              productsList[widget.itemid].amount =
+              ((productsList[widget.itemid].amount)! <= 0)
+                  ? (0)
+                  : ((productsList[widget.itemid].amount)! - 1);
+              widget.funtion();
+            }
+            );
           },
           child: Container(
             padding: const EdgeInsets.all(3.0),

@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 //for testing測試class在不同畫面執行主程式
+int _counter = 0;
 
 class Screen1 extends StatefulWidget{
   @override
@@ -9,16 +10,15 @@ class Screen1 extends StatefulWidget{
 }
 //異常 明明是statefulwidget但沒有動作
 class _Screen1State extends State<Screen1> {
-  int _counter = 0;
   void _incrementCounter() {
-    setState() {
+    setState(() =>
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
-    }
+      _counter++);
+
   }
   @override
   Widget build(BuildContext context){

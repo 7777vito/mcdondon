@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:mcdondon/global.dart';
 import 'package:mcdondon/counter.dart';
+import 'package:mcdondon/Screen3.dart';
+import 'package:flutter/foundation.dart';
 
 class DetailsScreen extends StatelessWidget {
+  final GlobalKey<CounterState> _key = GlobalKey();
   final int id;
-
-  const DetailsScreen({Key? key, required this.id}) : super(key: key);
+  int number=0;
+  methodInParent(){setState()=>debugPrint("details parent");}
+   DetailsScreen({Key? key, required this.id}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -33,8 +37,11 @@ class DetailsScreen extends StatelessWidget {
                             icon: Icon(
                               Icons.shopping_basket,
                             ),
-                            onPressed: () =>
-                                Navigator.pushNamed(context, 'orderscreen')),
+                            onPressed: () =>Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Screen3())
+                            ),
+                        ),  //Navigator.pushNamed(context, 'orderscreen')),
                       ],
                     ),
                   ),
@@ -98,7 +105,14 @@ class DetailsScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Counter(itemid: id,),
+                        //Counter(itemid: id,funtion: methodInParent,),
+                        Expanded(
+                          child: Counter(
+                            key: _key,
+                            itemid: id,
+                            funtion: methodInParent,
+                          ),
+                        ),
                         Text(
                           "${productsList[id].price}",
                           style: TextStyle(color:Colors.redAccent,
@@ -118,6 +132,7 @@ class DetailsScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w500)),
                         onPressed: () {
                           productsList[id].amount=(productsList[id].amount<=0)?(1):(productsList[id].amount);
+                          _key.currentState!.methodInChild();
                         },
                         //style:ButtonStyle(backgroundColor:MaterialStatePropertyAll<Color>(Colors.green)),
                         style: ElevatedButton.styleFrom(

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mcdondon/global.dart';
 import 'package:mcdondon/counter.dart';
+import 'package:flutter/foundation.dart';
 
 class Screen3 extends StatelessWidget {
   @override
+  int number=0;
+  methodInParent(){setState()=>debugPrint("screen3 parent");}
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -60,7 +63,7 @@ class Screen3 extends StatelessWidget {
                               padding: const EdgeInsets.symmetric(
                                 vertical: 15.0,
                               ),
-                              child: Counter(itemid: id,),
+                              child: Counter(itemid: id,funtion: methodInParent,),
                             ),
                             trailing:claprice(id: id),
                           ));
