@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:mcdondon/global.dart';
+import 'package:mcdondon/details.dart';
 
 class Screen2 extends StatelessWidget{
   @override
@@ -88,10 +89,10 @@ class ProductContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      // onTap: () => Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => DetailsScreen(id: id)),
-      // ),
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => DetailsScreen(id: id)),
+      ),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.yellow,
