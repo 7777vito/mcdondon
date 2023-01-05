@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:mcdondon/globel.dart';
+import 'package:mcdondon/global.dart';
 
 class Screen2 extends StatelessWidget{
   @override
@@ -104,7 +104,7 @@ class ProductContainer extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "${productsList[id].price}",
+                "\$${productsList[id].price}",
                 // style: Theme.of(context).textTheme.title.copyWith(
                 //   color: Colors.white,
                 // ),
