@@ -116,7 +116,9 @@ class DetailsScreen extends StatelessWidget {
                             style: TextStyle(color:Colors.white,
                                 fontSize: 20,
                                 fontWeight: FontWeight.w500)),
-                        onPressed: () {},
+                        onPressed: () {
+                          productsList[id].amount=(productsList[id].amount<=0)?(1):(productsList[id].amount);
+                        },
                         //style:ButtonStyle(backgroundColor:MaterialStatePropertyAll<Color>(Colors.green)),
                         style: ElevatedButton.styleFrom(
                             primary:Colors.green,

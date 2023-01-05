@@ -91,7 +91,10 @@ class Screen3 extends StatelessWidget {
                                   fontWeight: FontWeight.w500),
                             ),
                           ),
-                        )
+                        ),
+                        SizedBox(
+                          height: 5.0,
+                        ),
                       ],
                     ),
                   ),
@@ -119,7 +122,7 @@ class Screen3 extends StatelessWidget {
                         scrollDirection: Axis.horizontal,
                         shrinkWrap: true,
                         children: <Widget>[
-                          ...List.generate(1, (i) {
+                          ...List.generate(2, (i) {
                             return Container(
                               padding: const EdgeInsets.all(15.0),
                               margin: const EdgeInsets.only(right: 15),
@@ -208,10 +211,11 @@ class claprice extends StatefulWidget {
 class _clapriceState extends State<claprice> {
   @override
   Widget build(BuildContext context){
-    return Text(
-        "\$${(productsList[widget.id].price)!*productsList[widget.id].amount}",
-        style: TextStyle(color:Colors.redAccent,
-        fontSize: 20,
-        fontWeight: FontWeight.w500));
+    // return Text(
+    //     "\$${(productsList[widget.id].price)!*productsList[widget.id].amount}",
+    //     style: TextStyle(color:Colors.redAccent,
+    //     fontSize: 20,
+    //     fontWeight: FontWeight.w500));
+    return Text("\$${(productsList[widget.id].price)!*productsList[widget.id].amount}");
   }
 }
