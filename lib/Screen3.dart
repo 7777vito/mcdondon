@@ -3,11 +3,20 @@ import 'package:mcdondon/global.dart';
 import 'package:mcdondon/counter.dart';
 import 'package:flutter/foundation.dart';
 
-class Screen3 extends StatelessWidget {
+class Screen3 extends StatefulWidget {
+  @override
+  State<Screen3> createState() => _Screen3State();
+}
+
+class _Screen3State extends State<Screen3> {
   @override
   int number=0;
-  methodInParent(){setState()=>debugPrint("screen3 parent");}
+  bool se=false;
+  List<bool> selected=[false,true];
+  methodInParent(){setState(){productsList[0].amount=1;}}
+
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -65,7 +74,8 @@ class Screen3 extends StatelessWidget {
                               ),
                               child: Counter(itemid: id,funtion: methodInParent,),
                             ),
-                            trailing:claprice(id: id),
+                            //trailing:claprice(id: id),
+                            trailing:Text("\$${productsList[id].price*productsList[id].amount}"),
                           ));
                         }).toList(),
                         Padding(//額外增加
@@ -126,36 +136,56 @@ class Screen3 extends StatelessWidget {
                         shrinkWrap: true,
                         children: <Widget>[
                           ...List.generate(2, (i) {
-                            return Container(
-                              padding: const EdgeInsets.all(15.0),
-                              margin: const EdgeInsets.only(right: 15),
-                              alignment: Alignment.topLeft,
-                              width: MediaQuery.of(context).size.width / 3,
-                              decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 78, 252, 157),
-                                borderRadius: BorderRadius.circular(5.0),
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    "LINE Pay",
-                                style: TextStyle(color:Colors.redAccent,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w500)),
-                                  Spacer(),
-                                  Text("\$${productsList.map((element)=>element.amount*element.price).fold(0, (previous, current) => previous+ current)}",
-                                    style: TextStyle(color:Colors.redAccent,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w500),
+                            return GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  selected=[false,false];
+                                  selected[i]=true;
+
+                                });
+                              },
+                              child: Center(
+                                child: AnimatedContainer(
+                                  width: selected[i] ? 160.0 : 130.0,
+                                  height: selected[i] ? 180.0 : 150.0,
+                                  // color: Color.fromARGB(255, 255, 255, 255),
+                                  alignment: Alignment.center,
+                                  duration: const Duration(seconds: 1),
+                                  curve: Curves.fastOutSlowIn,
+                                  child: Container(
+                                    padding: const EdgeInsets.all(15.0),
+                                    margin: const EdgeInsets.only(right: 15),
+                                    alignment: Alignment.topLeft,
+                                    width: MediaQuery.of(context).size.width / 3,
+                                    decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 78, 252, 157),
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Text(
+                                            "LINE Pay",
+                                            style: TextStyle(color:Colors.redAccent,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.w500)),
+                                        Spacer(),
+                                        Text("\$${productsList.map((element)=>element.amount*element.price).fold(0, (previous, current) => previous+ current)}",
+                                          style: TextStyle(color:Colors.redAccent,
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                        //Image.asset("assets/img/mastercard.png"),
+                                        Image.network("https://upload.wikimedia.org/wikipedia/commons/f/fb/LINE_Pay_logo%282019%29.png")
+                                      ],
+                                    ),
                                   ),
-                                  //Image.asset("assets/img/mastercard.png"),
-                                  Image.network("https://upload.wikimedia.org/wikipedia/commons/f/fb/LINE_Pay_logo%282019%29.png")
-                                ],
+                                ),
                               ),
                             );
+
                           }),
-                          InkWell(
+                          InkWell( //add
                             onTap: () {},
                             child: Container(
                               margin: const EdgeInsets.symmetric(
@@ -219,6 +249,6 @@ class _clapriceState extends State<claprice> {
     //     style: TextStyle(color:Colors.redAccent,
     //     fontSize: 20,
     //     fontWeight: FontWeight.w500));
-    return Text("\$${(productsList[widget.id].price)!*productsList[widget.id].amount}");
+    return Text("\$${productsList[widget.id].price*productsList[widget.id].amount}");
   }
 }

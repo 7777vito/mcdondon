@@ -4,12 +4,21 @@ import 'package:mcdondon/counter.dart';
 import 'package:mcdondon/Screen3.dart';
 import 'package:flutter/foundation.dart';
 
-class DetailsScreen extends StatelessWidget {
-  final GlobalKey<CounterState> _key = GlobalKey();
+class DetailsScreen extends StatefulWidget {
   final int id;
-  int number=0;
-  methodInParent(){setState()=>debugPrint("details parent");}
    DetailsScreen({Key? key, required this.id}) : super(key: key);
+
+  @override
+  State<DetailsScreen> createState() => _DetailsScreenState();
+}
+
+class _DetailsScreenState extends State<DetailsScreen> {
+  final GlobalKey<CounterState> _key = GlobalKey();
+
+  int number=0;
+
+  methodInParent(){setState()=>debugPrint("details parent");}
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -50,9 +59,9 @@ class DetailsScreen extends StatelessWidget {
                       width: double.infinity,
                       alignment: Alignment.center,
                       child: Hero(
-                        tag: '$id',
+                        tag: '${widget.id}',
                         child: Image.network(
-                          "${productsList[id].img}",
+                          "${productsList[widget.id].img}",
                           width: MediaQuery.of(context).size.width * .7,
                         ),
                       ),
@@ -79,11 +88,12 @@ class DetailsScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Text(
-                          "${productsList[id].title}",
+                          "${productsList[widget.id].title}",
                           style: TextStyle(color:Colors.redAccent,
                               fontSize: 20,
                               fontWeight: FontWeight.w500),
                         ),
+
                         IconButton(
                           icon: Icon(
                             Icons.favorite_border,
@@ -91,6 +101,7 @@ class DetailsScreen extends StatelessWidget {
                           ),
                           onPressed: () {},
                         ),
+
                       ],
                     ),
                     Text(
@@ -100,7 +111,7 @@ class DetailsScreen extends StatelessWidget {
                       fontWeight: FontWeight.w500),
                     ),
                     Text(
-                      "${productsList[id].description}",
+                      "${productsList[widget.id].description}",
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -109,12 +120,12 @@ class DetailsScreen extends StatelessWidget {
                         Expanded(
                           child: Counter(
                             key: _key,
-                            itemid: id,
+                            itemid: widget.id,
                             funtion: methodInParent,
                           ),
                         ),
                         Text(
-                          "${productsList[id].price}",
+                          "${productsList[widget.id].price}",
                           style: TextStyle(color:Colors.redAccent,
                               fontSize: 20,
                               fontWeight: FontWeight.w500),
@@ -131,8 +142,8 @@ class DetailsScreen extends StatelessWidget {
                                 fontSize: 20,
                                 fontWeight: FontWeight.w500)),
                         onPressed: () {
-                          productsList[id].amount=(productsList[id].amount<=0)?(1):(productsList[id].amount);
-                          _key.currentState!.methodInChild();
+                          productsList[widget.id].amount=(productsList[widget.id].amount<=0)?(1):(productsList[widget.id].amount);
+                          _key.currentState!.methodInChild();//call child
                         },
                         //style:ButtonStyle(backgroundColor:MaterialStatePropertyAll<Color>(Colors.green)),
                         style: ElevatedButton.styleFrom(

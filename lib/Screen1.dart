@@ -10,6 +10,7 @@ class Screen1 extends StatefulWidget{
 }
 //異常 明明是statefulwidget但沒有動作
 class _Screen1State extends State<Screen1> {
+  bool favorite=false;
   void _incrementCounter() {
     setState(() =>
       // This call to setState tells the Flutter framework that something has
@@ -38,6 +39,19 @@ class _Screen1State extends State<Screen1> {
             tooltip: 'Increment',
             child: const Icon(Icons.add),
           ),
+          IconButton(
+            icon: (favorite)?(Icon(
+              Icons.favorite_rounded,
+              color: Colors.red,
+            )):(Icon(
+              Icons.favorite_border,
+              color: Colors.red,
+            )),
+            onPressed: () {
+              favorite=!favorite;
+            },
+          ),
+
         ],
       ),
     );

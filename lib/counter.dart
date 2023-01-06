@@ -14,7 +14,7 @@ class CounterState extends State<Counter> {
   //int ?_count = (shoppingcart[widget.itemid]!=null)?(shoppingcart[widget.itemid]):(0);
   int number=0;
   @override
-  methodInChild(){setState()=>debugPrint("count child");}
+  methodInChild(){{setState()=>debugPrint("count child");}}
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class CounterState extends State<Counter> {
           onTap: () {
             setState(() {
               productsList[widget.itemid].amount =
-                  (productsList[widget.itemid].amount)! + 1;
+                  productsList[widget.itemid].amount + 1;
               widget.funtion();
             }
             );
@@ -44,12 +44,12 @@ class CounterState extends State<Counter> {
         SizedBox(width: 15.0),
         GestureDetector(
           onTap: () {
-            setState(() {
+            setState(() {widget.funtion();
               productsList[widget.itemid].amount =
-              ((productsList[widget.itemid].amount)! <= 0)
+              (productsList[widget.itemid].amount <= 0)
                   ? (0)
-                  : ((productsList[widget.itemid].amount)! - 1);
-              widget.funtion();
+                  : (productsList[widget.itemid].amount- 1);
+
             }
             );
           },
