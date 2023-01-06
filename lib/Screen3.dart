@@ -13,7 +13,7 @@ class _Screen3State extends State<Screen3> {
   int number=0;
   bool se=false;
   List<bool> selected=[false,true];
-  methodInParent(){setState(()=>productsList[0].amount=1);}
+  methodInParent(){setState(()=>debugPrint("parent call"));}
 
   Widget build(BuildContext context) {
 
@@ -150,7 +150,7 @@ class _Screen3State extends State<Screen3> {
                                   height: selected[i] ? 180.0 : 150.0,
                                   // color: Color.fromARGB(255, 255, 255, 255),
                                   alignment: Alignment.center,
-                                  duration: const Duration(seconds: 1),
+                                  duration: const Duration(microseconds: 300000),
                                   curve: Curves.fastOutSlowIn,
                                   child: Container(
                                     padding: const EdgeInsets.all(15.0),

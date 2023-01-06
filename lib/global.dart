@@ -45,7 +45,7 @@ List<Product> productsList = [
     img:
     "https://www.stickpng.com/assets/images/580b57fcd9996e24bc43c1a8.png",
     amount:1,
-    favorite: false,
+    favorite: true,
   ),
   Product(
     description: lorem,

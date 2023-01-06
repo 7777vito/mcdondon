@@ -93,13 +93,16 @@ class _DetailsScreenState extends State<DetailsScreen> {
                               fontSize: 20,
                               fontWeight: FontWeight.w500),
                         ),
-
                         IconButton(
-                          icon: Icon(
-                            Icons.favorite_border,
-                            color: Colors.red,
+                          icon:Padding(
+                              padding: EdgeInsets.zero,
+                              child: productsList[widget.id].favorite==false?
+                              Icon(Icons.favorite_border,color: Colors.red,):Icon(
+                                  Icons.favorite_rounded,color: Colors.red,)
                           ),
-                          onPressed: () {},
+                          onPressed: () {setState(()=>
+                          productsList[widget.id].favorite=!productsList[widget.id].favorite   );
+                          },
                         ),
 
                       ],

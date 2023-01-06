@@ -1,58 +1,173 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-//for testing測試class在不同畫面執行主程式
-int _counter = 0;
+import 'package:mcdondon/global.dart';
+import 'package:mcdondon/details.dart';
 
 class Screen1 extends StatefulWidget{
   @override
   State<Screen1> createState() => _Screen1State();
 }
-//異常 明明是statefulwidget但沒有動作
+
 class _Screen1State extends State<Screen1> {
-  bool favorite=false;
-  void _incrementCounter() {
-    setState(() =>
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++);
+  methodInParent(){setState(()=>debugPrint("parent call"));}
 
-  }
   @override
-  Widget build(BuildContext context){
-    return Center(
+  Widget build(BuildContext context ){
+    return SingleChildScrollView(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Text(
-            'You have pushed the button this many times:',
-          ),
           Text(
-            '${_counter}',
-            style: Theme.of(context).textTheme.headline4,
+            "favorite",
+            // style: Theme.of(context).textTheme.display1.apply(
+            //   fontWeightDelta: 2,
+            //   color: Colors.black,
+            // ),
+            style: TextStyle(color:Colors.redAccent,
+                fontSize: 20,
+                fontWeight: FontWeight.w500),
+          ),
+          Text("food",
+              // style:Theme.of(context).textTheme.display1.copyWith(height: .9)),
+              style: TextStyle(color:Colors.redAccent,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500)),
+          SizedBox(
+            height: 15,
           ),
 
-          FloatingActionButton(
-            onPressed: _incrementCounter,
-            tooltip: 'Increment',
-            child: const Icon(Icons.add),
+          Text(
+              "Hamburger",
+              // style: Theme.of(context).textTheme.title.apply(
+              //   fontWeightDelta: 2,
+              // ),
+              style: TextStyle(color:Colors.redAccent,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500)
           ),
-          IconButton( iconSize: 30.0,
-            icon:Padding(
-                padding: EdgeInsets.zero,
-              child: favorite==true?
-              Icon(Icons.favorite_border):Icon(
-                Icons.favorite_rounded)
+          SizedBox(
+            height: 11,
+          ),
+          GridView.builder(
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 15,
+                mainAxisSpacing: 15,
+                childAspectRatio: .7
             ),
-            onPressed: () {setState(()=>
-              favorite=!favorite   );
+            itemCount: productsList.length,
+            itemBuilder: (BuildContext context, int index) {
+              return (productsList[index].favorite)?(ProductContainer(id: index,funtion: methodInParent,)):(SizedBox.shrink());
             },
-          ),
-
+          )
         ],
+      ),
+    );
+  }
+}
+class ProductContainer extends StatefulWidget {
+  final int id;
+  final Function funtion;
+  const ProductContainer({Key? key, int this.id=0,required this.funtion}) : super(key: key);
+
+  @override
+  State<ProductContainer> createState() => _ProductContainerState();
+}
+
+class _ProductContainerState extends State<ProductContainer> {
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => DetailsScreen(id: widget.id)),
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.yellow,
+          borderRadius: BorderRadius.circular(15.0),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                      "\$${productsList[widget.id].price}",
+                      // style: Theme.of(context).textTheme.title.copyWith(
+                      //   color: Colors.white,
+                      // ),
+                      style: TextStyle(color:Colors.redAccent,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500)
+                  ),
+                ),
+                IconButton(
+                  icon:Padding(
+                      padding: EdgeInsets.zero,
+                      child: productsList[widget.id].favorite==false?
+                      Icon(Icons.favorite_border,color: Colors.red,):Icon(
+                        Icons.favorite_rounded,color: Colors.red,)
+                  ),
+                  onPressed: () {setState((){
+                  productsList[widget.id].favorite=!productsList[widget.id].favorite;widget.funtion();} );
+                  },
+                ),
+              ]
+            ),
+            SizedBox(
+              height: 15.0,
+            ),
+            Expanded(
+              child: Align(
+                alignment: Alignment.center,
+                child: Hero(
+                  tag: '${widget.id}',
+                  child: Image.network(
+                    "${productsList[widget.id].img}",
+                    fit: BoxFit.cover,
+                    // width: double.infinity,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 15.0,
+            ),
+            Container(
+              alignment: Alignment.center,
+              padding: const EdgeInsets.all(15.0),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(9.0),
+                ),
+              ),
+              child: Text(
+                  "${productsList[widget.id].title}",
+                  // style: Theme.of(context)
+                  //     .textTheme
+                  //     .subtitle
+                  //     .copyWith(color: Colors.white),
+                  style: TextStyle(color:Colors.redAccent,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500)
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
