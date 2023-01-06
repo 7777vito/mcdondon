@@ -11,8 +11,7 @@ class Screen3 extends StatefulWidget {
 class _Screen3State extends State<Screen3> {
   @override
   int number=0;
-  bool se=false;
-  List<bool> selected=[false,true];
+
   methodInParent(){setState(()=>debugPrint("parent call"));}
 
   Widget build(BuildContext context) {
@@ -135,19 +134,20 @@ class _Screen3State extends State<Screen3> {
                         scrollDirection: Axis.horizontal,
                         shrinkWrap: true,
                         children: <Widget>[
-                          ...List.generate(2, (i) {
+                          ...List.generate(PaymentList.length, (i) {
                             return GestureDetector(
                               onTap: () {
                                 setState(() {
-                                  selected=[false,false];
-                                  selected[i]=true;
-
+                                  for(int x=0;x<PaymentList.length;x++){
+                                    PaymentList[x].select=false;
+                                  }
+                                  PaymentList[i].select=true;
                                 });
                               },
                               child: Center(
                                 child: AnimatedContainer(
-                                  width: selected[i] ? 160.0 : 130.0,
-                                  height: selected[i] ? 180.0 : 150.0,
+                                  width: PaymentList[i].select ? 160.0 : 130.0,
+                                  height: PaymentList[i].select ? 180.0 : 150.0,
                                   // color: Color.fromARGB(255, 255, 255, 255),
                                   alignment: Alignment.center,
                                   duration: const Duration(microseconds: 300000),
@@ -158,14 +158,14 @@ class _Screen3State extends State<Screen3> {
                                     alignment: Alignment.topLeft,
                                     width: MediaQuery.of(context).size.width / 3,
                                     decoration: BoxDecoration(
-                                      color: Color.fromARGB(255, 78, 252, 157),
+                                      color: Color(PaymentList[i].color),
                                       borderRadius: BorderRadius.circular(5.0),
                                     ),
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: <Widget>[
                                         Text(
-                                            "LINE Pay",
+                                            PaymentList[i].title,
                                             style: TextStyle(color:Colors.redAccent,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.w500)),
@@ -176,7 +176,7 @@ class _Screen3State extends State<Screen3> {
                                               fontWeight: FontWeight.w500),
                                         ),
                                         //Image.asset("assets/img/mastercard.png"),
-                                        Image.network("https://upload.wikimedia.org/wikipedia/commons/f/fb/LINE_Pay_logo%282019%29.png")
+                                        Image.network(PaymentList[i].img)
                                       ],
                                     ),
                                   ),
