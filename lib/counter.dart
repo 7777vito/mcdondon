@@ -14,7 +14,7 @@ class CounterState extends State<Counter> {
   //int ?_count = (shoppingcart[widget.itemid]!=null)?(shoppingcart[widget.itemid]):(0);
   int number=0;
   @override
-  methodInChild(){{setState()=>debugPrint("count child");}}
+  methodInChild(){setState(()=>debugPrint("count child"));}
 
   @override
   Widget build(BuildContext context) {

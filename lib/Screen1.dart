@@ -34,21 +34,21 @@ class _Screen1State extends State<Screen1> {
             '${_counter}',
             style: Theme.of(context).textTheme.headline4,
           ),
+
           FloatingActionButton(
             onPressed: _incrementCounter,
             tooltip: 'Increment',
             child: const Icon(Icons.add),
           ),
-          IconButton(
-            icon: (favorite)?(Icon(
-              Icons.favorite_rounded,
-              color: Colors.red,
-            )):(Icon(
-              Icons.favorite_border,
-              color: Colors.red,
-            )),
-            onPressed: () {
-              favorite=!favorite;
+          IconButton( iconSize: 30.0,
+            icon:Padding(
+                padding: EdgeInsets.zero,
+              child: favorite==true?
+              Icon(Icons.favorite_border):Icon(
+                Icons.favorite_rounded)
+            ),
+            onPressed: () {setState(()=>
+              favorite=!favorite   );
             },
           ),
 

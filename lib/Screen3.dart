@@ -13,7 +13,7 @@ class _Screen3State extends State<Screen3> {
   int number=0;
   bool se=false;
   List<bool> selected=[false,true];
-  methodInParent(){setState(){productsList[0].amount=1;}}
+  methodInParent(){setState(()=>productsList[0].amount=1);}
 
   Widget build(BuildContext context) {
 
