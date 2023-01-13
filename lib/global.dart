@@ -48,20 +48,20 @@ class Product {
 //List<int> shoppingcart=[1,1,1,1,1];
 List<Product> productsList = [
   Product(
-    description: "大悲咒（梵語：महा करुणा धारनी，羅馬化：Mahā Karuṇā Dhāranī），全名千手千眼觀世音菩薩廣大圓滿無礙大悲心陀羅尼經大悲神咒，又稱大悲心陀羅尼（Mahā Karuṇā-citta Dhāranī）、千手千眼觀音大悲咒（Sahasrabhuja Sahasranetra Avalokiteśvara Mahā Karuṇā Dhāranī）、千手千眼無礙大悲心陀羅尼、無礙大悲陀羅尼、廣大圓滿陀羅尼、滿願陀羅尼、隨心自在陀羅尼、救苦陀羅尼、延壽陀羅尼、大千隨喜陀羅尼、積善果業陀羅尼、速超十地陀羅尼，有時也稱青頸觀音大悲咒（梵語：नीलकण्ठ धारनी，羅馬化：Nīlakaṇṭha Dhāraṇī，義爲「青頸陀羅尼」，是指青頸觀音的咒語），而朝鮮半島則習慣稱之為神妙章句大陀羅尼（韓語：신묘장구대다라니）；是大乘佛教《千手千眼觀世音菩薩大悲心陀羅尼經》（《大悲心陀羅尼經》）中的咒文，漢傳共有八十四句，為梵語構成的咒文章句。",
-    title: "Brown Sugar",
+    description: "香甜哈密瓜以及西瓜切成方磚方便入口，搭配菲達起士意外的對味，菲達起士是由綿羊奶以及山羊奶所製成，起士底蘊香濃卻不腥，搭配水果能有另一番巧妙口味，不喜歡吃葉菜沙拉的朋友相當值得嘗試！",
+    title: "起士鮮果沙拉",
     price: 250,
     img:
-    "https://www.journee-mondiale.com//medias/grande/images/journee/hamburger.png",
+    "https://zh.pngtree.com/freepng/fruit-platter-salad_4976478.html",
     amount:1,
     favorite: false,
   ),
   Product(
-    description: "拉丁語[註 1]（拉丁語：lingua latīna，IPA：[ˈlɪŋɡʷa laˈtiːna]），是印歐語系的義大利語族語言，於古羅馬廣泛使用，至少可追溯至羅馬帝國的奧古斯都皇帝時期，當時所使用的書面語稱為「古典拉丁語」。拉丁語是最早在拉提姆地區（今義大利的拉齊奧區）和羅馬帝國使用的語言之一。雖然現在拉丁語通常被認為是一種死語言，也有一部分認為是瀕危語言，但拉丁語在梵蒂岡仍被列為官方語言之一。此外，仍有少數基督宗教神職人員及學者可以流利地使用拉丁語。羅馬天主教傳統上用拉丁語作為正式會議的語言和禮拜儀式用的語言，此外，許多西方國家的大學、高中仍然提供有關拉丁語的課程。",
-    title: "Cheesy Jalapenos",
+    description: "歐爸親手做出的一到菜。",
+    title: "韓式泡菜",
     price: 270,
     img:
-    "https://huggysbar.com/wp-content/uploads/2019/06/Cheesy_Jalapenos.png",
+    "https://zh.pngtree.com/freepng/refreshing-kimchi-cabbage_3662642.html",
     amount:1,
     favorite: false,
   ),
@@ -89,6 +89,15 @@ List<Product> productsList = [
     price: 210,
     img:
     "http://french.peopledaily.com.cn/NMediaFile/2016/0206/FOREIGN201602060850000565854639675.png",
+    amount:1,
+    favorite: false,
+  ),
+  Product(
+    description: "香甜哈密瓜以及西瓜切成方磚方便入口，搭配菲達起士意外的對味，菲達起士是由綿羊奶以及山羊奶所製成，起士底蘊香濃卻不腥，搭配水果能有另一番巧妙口味，不喜歡吃葉菜沙拉的朋友相當值得嘗試！",
+    title: "起士鮮果沙拉",
+    price: 250,
+    img:
+    "https://zh.pngtree.com/freepng/fruit-platter-salad_4976478.html",
     amount:1,
     favorite: false,
   ),

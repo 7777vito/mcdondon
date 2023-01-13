@@ -4,15 +4,51 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:mcdondon/global.dart';
 import 'package:mcdondon/details.dart';
+import 'package:card_swiper/card_swiper.dart';
 
+// Swiper imageSlider(context) {
+//   return Swiper(
+//     autoplay: true,
+//     itemCount: 10,
+//     itemBuilder: (BuildContext context, int index) {
+//       return Image.network("https://lh3.googleusercontent.com/wIcl3tehFmOUpq-Jl3hlVbZVFrLHePRtIDWV5lZwBVDr7kEAgLTChyvXUclMVQDRHDEcDhY=w640-h400-e365-rj-sc0x00ffffff",
+//           fit: BoxFit.fitHeight);
+//     },
+//     scale: 0.8,
+//     viewportFraction: 0.7,
+//   );
+// }
 class Screen2 extends StatelessWidget{
   @override
   Widget build(BuildContext context ){
-    return SingleChildScrollView(
+
+    return Container(
+        decoration: BoxDecoration(
+        image: DecorationImage(image: AssetImage("images/backGround.jpg"),     //設定背景圖片
+      fit: BoxFit.cover),),
+      child: SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+
+          Container(
+            margin: const EdgeInsets.all(10.0),
+            color: Colors.amber[600],
+            width: 350.0,
+            height: 150.0,
+            child: Swiper(
+              itemBuilder: (BuildContext context, int index) {
+                return Image.network(
+                  "https://via.placeholder.com/350x150",
+                  fit: BoxFit.fill,
+                );
+              },
+              itemCount: 3,
+              pagination: SwiperPagination(),
+              control: SwiperControl(),
+            ),
+          ),
           Text(
             "Food",
             // style: Theme.of(context).textTheme.display1.apply(
@@ -23,6 +59,7 @@ class Screen2 extends StatelessWidget{
                 fontSize: 20,
                 fontWeight: FontWeight.w500),
           ),
+
           Text("Delivery",
               // style:Theme.of(context).textTheme.display1.copyWith(height: .9)),
             style: TextStyle(color:Colors.redAccent,
@@ -78,6 +115,7 @@ class Screen2 extends StatelessWidget{
             },
           )
         ],
+      ),
       ),
     );
   }

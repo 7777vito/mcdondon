@@ -7,6 +7,8 @@ import 'package:mcdondon/Screen2.dart';
 import 'package:mcdondon/Screen3.dart';
 import 'package:mcdondon/global.dart';
 
+import 'package:page_transition/page_transition.dart';
+import 'package:swipeable_button_view/swipeable_button_view.dart';
 int currentindex=1;
 void main() {
   runApp( MyApp());
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'swipeable button'),
     );
   }
 }
@@ -56,30 +58,86 @@ class MyHomePageState extends State<MyHomePage> {
   //     _counter++;
   //   }
   // }
+
+  bool isFinished=false;
+
+
+  @override
+
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Swipeable button view demo'),
+        centerTitle: true,),
+      body: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          Image.asset("images/backGround.jpg",
+            fit: BoxFit.cover,
+            height: double.infinity,
+            width: double.infinity,),
+          Padding(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 25),
+            child: SwipeableButtonView(
+              buttonText: "Slide to unlock",
+              buttonWidget: Container(child: Icon(Icons.arrow_forward_ios_rounded,
+                color: Colors.grey,),),
+              activeColor: Color(0xff3398F6),
+              isFinished: isFinished,
+              onWaitingProcess: () {
+                Future.delayed(Duration(seconds: 2), () {
+                  setState(() {
+                    isFinished=true;
+                  });
+                });
+              },
+              onFinish: () async {
+                await Navigator.push(context, PageTransition(type: PageTransitionType.fade,
+                    child: nextPage()));
+                setState(() {
+                  isFinished=false;
+                });
+              },
+            ),),
+        ],
+      ),
+    );
+  }
+}
+class nextPage extends StatefulWidget {
+  const nextPage({Key? key}) : super(key: key);
+
+  @override
+  State<nextPage> createState() => _nextPageState();
+}
+
+class _nextPageState extends State<nextPage> {
   final tabs=[
     Center(child: Screen1(),),
     Center(child: Screen2(),),
     Center(child: Screen3(),),
     //Center(child: Screen4(),),
   ];
-
   @override
-
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text("McDonDon"),
 
       ),
       body: tabs[currentindex],
+      // body:Swiper(
+      //   itemBuilder: (BuildContext context, int index) {
+      //     return Image.network(
+      //       "https://via.placeholder.com/350x150",
+      //       fit: BoxFit.fill,
+      //     );
+      //   },
+      //   itemCount: 3,
+      //   pagination: SwiperPagination(),
+      //   control: SwiperControl(),
+      // ),
+
       // floatingActionButton: FloatingActionButton(
       //   onPressed: _incrementCounter,
       //   tooltip: 'Increment',
@@ -110,5 +168,3 @@ class MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-
