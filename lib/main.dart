@@ -83,7 +83,7 @@ class MyHomePageState extends State<MyHomePage> {
               activeColor: Color(0xff3398F6),
               isFinished: isFinished,
               onWaitingProcess: () {
-                Future.delayed(Duration(seconds: 2), () {
+                Future.delayed(Duration(seconds: 0), () {
                   setState(() {
                     isFinished=true;
                   });

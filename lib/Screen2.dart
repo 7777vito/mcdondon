@@ -88,7 +88,7 @@ class Screen2 extends StatelessWidget{
             height: 15,
           ),
           Text(
-            "Hamburger",
+            "FOOD LIST",
             // style: Theme.of(context).textTheme.title.apply(
             //   fontWeightDelta: 2,
             // ),

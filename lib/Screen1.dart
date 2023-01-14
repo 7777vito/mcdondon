@@ -33,59 +33,76 @@ class _Screen1State extends State<Screen1> {
 
   @override
   Widget build(BuildContext context ){
-    return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text(
-            "favorite",
-            // style: Theme.of(context).textTheme.display1.apply(
-            //   fontWeightDelta: 2,
-            //   color: Colors.black,
-            // ),
-            style: TextStyle(color:Colors.redAccent,
-                fontSize: 20,
-                fontWeight: FontWeight.w500),
-          ),
-          Text("food",
-              // style:Theme.of(context).textTheme.display1.copyWith(height: .9)),
-              style: TextStyle(color:Colors.redAccent,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500)),
-          SizedBox(
-            height: 15,
-          ),
+    return Column(
+      children: <Widget>[
+        Expanded(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  "favorite",
+                  // style: Theme.of(context).textTheme.display1.apply(
+                  //   fontWeightDelta: 2,
+                  //   color: Colors.black,
+                  // ),
+                  style: TextStyle(color:Colors.redAccent,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500),
+                ),
+                Text("food",
+                    // style:Theme.of(context).textTheme.display1.copyWith(height: .9)),
+                    style: TextStyle(color:Colors.redAccent,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500)),
+                SizedBox(
+                  height: 15,
+                ),
+                Visibility(
+                  visible: productFF()!=0,
+                  child: Text(
+                      "LIST",
+                      // style: Theme.of(context).textTheme.title.apply(
+                      //   fontWeightDelta: 2,
+                      // ),
+                      style: TextStyle(color:Colors.redAccent,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500)
+                  ),
+                ),
 
-          Text(
-              "Hamburger",
-              // style: Theme.of(context).textTheme.title.apply(
-              //   fontWeightDelta: 2,
-              // ),
-              style: TextStyle(color:Colors.redAccent,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500)
-          ),
-          SizedBox(
-            height: 11,
-          ),
-          GridView.builder(
-            scrollDirection: Axis.vertical,
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 15,
-                mainAxisSpacing: 15,
-                childAspectRatio: .7
+                SizedBox(
+                  height: 11,
+                ),
+                Visibility(
+                  visible: productFF()==0,
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 200,
+                    child: Text("無喜愛食物"),
+                  )
+                ),
+                GridView.builder(
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 15,
+                      childAspectRatio: .7
+                  ),
+                  itemCount: productFF(),
+                  itemBuilder: (BuildContext context, int index) {
+                    return ProductContainer(id: favorite[index],funtion: methodInParent);
+                  },
+                )
+              ],
             ),
-            itemCount: productFF(),
-            itemBuilder: (BuildContext context, int index) {
-              return (productsList[favorite[index]].favorite)?(ProductContainer(id: favorite[index],funtion: methodInParent,)):(SizedBox.shrink());
-            },
-          )
-        ],
-      ),
+          ),
+        )
+      ],
     );
   }
 }

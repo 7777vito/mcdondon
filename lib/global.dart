@@ -54,7 +54,7 @@ List<Product> productsList = [
     img:
     "https://zh.pngtree.com/freepng/fruit-platter-salad_4976478.html",
     amount:1,
-    favorite: false,
+    favorite: true,
   ),
   Product(
     description: "歐爸親手做出的一到菜。",
@@ -63,7 +63,7 @@ List<Product> productsList = [
     img:
     "https://zh.pngtree.com/freepng/refreshing-kimchi-cabbage_3662642.html",
     amount:1,
-    favorite: false,
+    favorite: true,
   ),
   Product(
     description: "英語（英語：English）直譯為「英吉利語」、「英格蘭語」或「英倫語」，是發展於西歐英格蘭地區的一支西日耳曼語言，是目前唯一具有全球通用語和世界語言地位的語言[4][5]，也是多數國家和國際組織的官方語言。英語是全球使用最廣泛的日耳曼語（至少70%的日耳曼語使用者是在說英語），也是使用範圍最廣的印歐語言。",
@@ -81,7 +81,7 @@ List<Product> productsList = [
     img:
     "https://holly.paheal.net/_images/e28e3076236eff37065d36416001263e/5424912%20-%20Bocchi_the_Rock%21%20Hitori_Gotou%20Nijika_Ijichi%20z-05.jpg",
     amount:1,
-    favorite: false,
+    favorite: true,
   ),
   Product(
     description: "克羅埃西亞共和國（克羅埃西亞語：Republika Hrvatska），通稱克羅埃西亞（克羅埃西亞語：Hrvatska），是位於東南歐、地中海和巴爾幹半島交會處的單一議會共和制國家，首都與最大城市為札格瑞布。克國將行政區劃分為20個縣與一個直轄市兼首都的札格瑞布，其領土面積為56,538平方公里。克羅埃西亞氣候多樣，同時具備大陸性與地中海型氣候，並於亞得里亞海沿岸擁有超過1000座島嶼。2021年克羅埃西亞人口約為389萬人，多數為克羅埃西亞人，自從克羅埃西亞由南斯拉夫獨立後至今該國如同大部分巴爾幹半島國家一樣人口持續減少。",
@@ -90,7 +90,7 @@ List<Product> productsList = [
     img:
     "http://french.peopledaily.com.cn/NMediaFile/2016/0206/FOREIGN201602060850000565854639675.png",
     amount:1,
-    favorite: false,
+    favorite: true,
   ),
   Product(
     description: "香甜哈密瓜以及西瓜切成方磚方便入口，搭配菲達起士意外的對味，菲達起士是由綿羊奶以及山羊奶所製成，起士底蘊香濃卻不腥，搭配水果能有另一番巧妙口味，不喜歡吃葉菜沙拉的朋友相當值得嘗試！",
@@ -99,7 +99,7 @@ List<Product> productsList = [
     img:
     "https://zh.pngtree.com/freepng/fruit-platter-salad_4976478.html",
     amount:1,
-    favorite: false,
+    favorite: true,
   ),
 
 ];

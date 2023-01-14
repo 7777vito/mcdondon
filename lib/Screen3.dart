@@ -18,17 +18,17 @@ class _Screen3State extends State<Screen3> {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          icon: Icon(
-            Icons.chevron_left,
-            color: Colors.black,//在此放入迷因
-          ),
-          onPressed: () => Navigator.pop(context),
-        ),
-      ),
+      // appBar: AppBar(
+      //   elevation: 0,
+      //   backgroundColor: Colors.white,
+      //   leading: IconButton(
+      //     icon: Icon(
+      //       Icons.chevron_left,
+      //       color: Colors.black,//在此放入迷因
+      //     ),
+      //     onPressed: () => Navigator.pop(context),
+      //   ),
+      // ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -120,7 +120,7 @@ class _Screen3State extends State<Screen3> {
               color: Colors.grey[100],
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
+                children: <Widget>[//這裡有問題 假設手機螢幕較小 會因為上下間距小 payment上下無法升縮 有被擠壓
                   Text(
                     "Payment",
                     style: TextStyle(color:Colors.redAccent,

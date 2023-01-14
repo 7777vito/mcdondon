@@ -70,6 +70,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 ],
               ),
             ),
+            //在這裡有bug 假設手機尺寸較小 add to cart會跑掉有問題
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
