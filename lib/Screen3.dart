@@ -182,7 +182,7 @@ class _Screen3State extends State<Screen3> {
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.w500)),
                                         Spacer(),
-                                        Text("\$${productsList.map((element)=>element.amount*element.price).fold(0, (previous, current) => previous+ current)}",
+                                        Text("\$${(productsList.map((element)=>element.amount*element.price).fold(0, (previous, current) => previous+ current))+((productsList.map((element)=>element.amount*element.price).fold(0, (previous, current) => previous+ current)!=0)?(30):(0))}",
                                           style: TextStyle(color:Colors.redAccent,
                                               fontSize: 20,
                                               fontWeight: FontWeight.w500),
