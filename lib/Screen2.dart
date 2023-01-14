@@ -38,13 +38,14 @@ class Screen2 extends StatelessWidget{
             width: 350.0,
             height: 150.0,
             child: Swiper(
+              autoplay: true,
               itemBuilder: (BuildContext context, int index) {
                 return Image.network(
-                  "https://via.placeholder.com/350x150",
+                  advlist[index],
                   fit: BoxFit.fill,
                 );
               },
-              itemCount: 3,
+              itemCount: advlist.length,
               pagination: SwiperPagination(),
               control: SwiperControl(),
             ),

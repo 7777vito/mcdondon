@@ -52,7 +52,8 @@ List<Product> productsList = [
     title: "起士鮮果沙拉",
     price: 250,
     img:
-    "https://zh.pngtree.com/freepng/fruit-platter-salad_4976478.html",
+    "https://png.pngtree.com/png-clipart/20190811/ourlarge/pngtree-fruit-platter-salad-png-image_1636499.jpg",
+    //https://zh.pngtree.com/freepng/fruit-platter-salad_4976478.html
     amount:1,
     favorite: true,
   ),
@@ -61,34 +62,35 @@ List<Product> productsList = [
     title: "韓式泡菜",
     price: 270,
     img:
-    "https://zh.pngtree.com/freepng/refreshing-kimchi-cabbage_3662642.html",
+    "https://png.pngtree.com/element_our/png_detail/20181018/refreshing-kimchi-cabbage-png_165064.jpg",
+    //https://zh.pngtree.com/freepng/refreshing-kimchi-cabbage_3662642.html
     amount:1,
     favorite: true,
   ),
   Product(
-    description: "英語（英語：English）直譯為「英吉利語」、「英格蘭語」或「英倫語」，是發展於西歐英格蘭地區的一支西日耳曼語言，是目前唯一具有全球通用語和世界語言地位的語言[4][5]，也是多數國家和國際組織的官方語言。英語是全球使用最廣泛的日耳曼語（至少70%的日耳曼語使用者是在說英語），也是使用範圍最廣的印歐語言。",
+    description: "漢堡（英語：Hamburger，又簡稱burger），是以圓形麵包內夾絞肉的食物為公認的美式速食代表。餡料以漢堡排為主，並附夾上若干配料（以蔬菜和起司為主）和調味料。英語「hamburger」意為「來自漢堡城的包」，故既可以用來指整個漢堡，也可以單指漢堡排本身。",
     title: "Brown Sugar",
     price: 210,
     img:
-    "https://www.stickpng.com/assets/images/580b57fcd9996e24bc43c1a8.png",
+    "http://vito7777.asuscomm.com/foodlist/Bigbuger.png",
     amount:1,
     favorite: true,
   ),
   Product(
-    description: "原始日耳曼語（英語：Proto-Germanic），或曰共同日耳曼語（Common Germanic），是猜想中存在的一個所有日耳曼語族語言的共同祖先[註 1]。原始日耳曼語的相關內容，並非以存留至今的文件，來證明其詞根的形式等的，而是以比照法來重構的。另外，有些人認為，有些約於西元200年左右寫成，並存留至今的盧恩字母寫成的碑銘，其題字裡的語言是原始諾爾斯語或甚至於是直接從原始日耳曼語發展而來的晚期共同日耳曼語。有人認為，有些存在於非日耳曼語言當中的日耳曼語言借詞，被認為是在原始日耳曼語時候就被借入這些語言的。例如芬蘭語和愛沙尼亞語的kuningas（意即「國王」）這個詞，就和原始日耳曼語的*kuningaz這個字的形式相似[2]；另外，原始日耳曼語本身是一種由原始印歐語發展出來的語言。",
-    title: "Speed Burger",
+    description: "利用PhotoShop手繪製作的雙層牛肉起司堡，將手作的麵包切半，炭烤過後再把兩片碳烤後的牛肉漢堡肉加入，並增加兩片起司片所製成。",
+    title: "Double CheeseBurger",
     price: 900,
     img:
-    "https://holly.paheal.net/_images/e28e3076236eff37065d36416001263e/5424912%20-%20Bocchi_the_Rock%21%20Hitori_Gotou%20Nijika_Ijichi%20z-05.jpg",
+    "http://vito7777.asuscomm.com/foodlist/dobule%20cheese.png",
     amount:1,
     favorite: true,
   ),
   Product(
-    description: "克羅埃西亞共和國（克羅埃西亞語：Republika Hrvatska），通稱克羅埃西亞（克羅埃西亞語：Hrvatska），是位於東南歐、地中海和巴爾幹半島交會處的單一議會共和制國家，首都與最大城市為札格瑞布。克國將行政區劃分為20個縣與一個直轄市兼首都的札格瑞布，其領土面積為56,538平方公里。克羅埃西亞氣候多樣，同時具備大陸性與地中海型氣候，並於亞得里亞海沿岸擁有超過1000座島嶼。2021年克羅埃西亞人口約為389萬人，多數為克羅埃西亞人，自從克羅埃西亞由南斯拉夫獨立後至今該國如同大部分巴爾幹半島國家一樣人口持續減少。",
-    title: "Brown Sugar",
+    description: "透過內功提升火力將飯快速完成，使用屠龍斬切出完美的叉燒放上，加上青江菜點綴，最後使用少林絕學火雲掌將蛋煎熟，其中有偷加入洋蔥，讓這碗飯吃得人感動淚流",
+    title: "黯然銷魂飯",
     price: 210,
     img:
-    "http://french.peopledaily.com.cn/NMediaFile/2016/0206/FOREIGN201602060850000565854639675.png",
+    "http://vito7777.asuscomm.com/foodlist/an_ran_xiao_hunfan.jpg",
     amount:1,
     favorite: true,
   ),
@@ -97,11 +99,17 @@ List<Product> productsList = [
     title: "起士鮮果沙拉",
     price: 250,
     img:
-    "https://zh.pngtree.com/freepng/fruit-platter-salad_4976478.html",
+    "https://png.pngtree.com/png-clipart/20190811/ourlarge/pngtree-fruit-platter-salad-png-image_1636499.jpg",
+    //https://zh.pngtree.com/freepng/fruit-platter-salad_4976478.html
     amount:1,
     favorite: true,
   ),
+];
 
+List<String>advlist=[
+  "http://vito7777.asuscomm.com/foodlist/adv/free_transportation.png",
+  "http://vito7777.asuscomm.com/foodlist/adv/kimchionsale.png",
+  "http://vito7777.asuscomm.com/foodlist/adv/yearsale.png",
 ];
 
 // class Category {
