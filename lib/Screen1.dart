@@ -42,20 +42,15 @@ class _Screen1State extends State<Screen1> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "favorite",
+                  "Favorite Food",
                   // style: Theme.of(context).textTheme.display1.apply(
                   //   fontWeightDelta: 2,
                   //   color: Colors.black,
                   // ),
                   style: TextStyle(color:Colors.redAccent,
                       fontSize: 20,
-                      fontWeight: FontWeight.w500),
+                      fontWeight: FontWeight.w900),
                 ),
-                Text("food",
-                    // style:Theme.of(context).textTheme.display1.copyWith(height: .9)),
-                    style: TextStyle(color:Colors.redAccent,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500)),
                 SizedBox(
                   height: 15,
                 ),
@@ -68,7 +63,7 @@ class _Screen1State extends State<Screen1> {
                       // ),
                       style: TextStyle(color:Colors.redAccent,
                           fontSize: 20,
-                          fontWeight: FontWeight.w500)
+                          fontWeight: FontWeight.w900)
                   ),
                 ),
 
@@ -80,7 +75,10 @@ class _Screen1State extends State<Screen1> {
                   child: Container(
                     alignment: Alignment.center,
                     height: 200,
-                    child: Text("無喜愛食物"),
+                    child: Text("無喜愛食物",style: TextStyle(color:Colors.orange,
+                        fontSize: 36,
+                        fontWeight: FontWeight.w900)
+                    ),
                   )
                 ),
                 GridView.builder(
@@ -145,7 +143,7 @@ class _ProductContainerState extends State<ProductContainer> {
                         // ),
                         style: TextStyle(color:Colors.redAccent,
                             fontSize: 20,
-                            fontWeight: FontWeight.w500)
+                            fontWeight: FontWeight.w900)
                     ),
                   ),
                   IconButton(
@@ -198,7 +196,7 @@ class _ProductContainerState extends State<ProductContainer> {
                   //     .copyWith(color: Colors.white),
                   style: TextStyle(color:Colors.redAccent,
                       fontSize: 20,
-                      fontWeight: FontWeight.w500)
+                      fontWeight: FontWeight.w900)
               ),
             )
           ],

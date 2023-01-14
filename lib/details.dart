@@ -92,7 +92,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           "${productsList[widget.id].title}",
                           style: TextStyle(color:Colors.redAccent,
                               fontSize: 20,
-                              fontWeight: FontWeight.w500),
+                              fontWeight: FontWeight.w900),
                         ),
                         IconButton(
                           icon:Padding(
@@ -112,7 +112,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       "Description",
                       style: TextStyle(color:Colors.redAccent,
                       fontSize: 20,
-                      fontWeight: FontWeight.w500),
+                      fontWeight: FontWeight.w900),
                     ),
                     Text(
                       "${productsList[widget.id].description}",
@@ -132,7 +132,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           "${productsList[widget.id].price}",
                           style: TextStyle(color:Colors.redAccent,
                               fontSize: 20,
-                              fontWeight: FontWeight.w500),
+                              fontWeight: FontWeight.w900),
                         ),
                       ],
                     ),
@@ -144,7 +144,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             "Add To Cart",
                             style: TextStyle(color:Colors.white,
                                 fontSize: 20,
-                                fontWeight: FontWeight.w500)),
+                                fontWeight: FontWeight.w900)),
                         onPressed: () {
                           productsList[widget.id].amount=(productsList[widget.id].amount<=0)?(1):(productsList[widget.id].amount);
                           _key.currentState!.methodInChild();//call child

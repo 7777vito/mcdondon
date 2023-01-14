@@ -29,7 +29,7 @@ class Screen2 extends StatelessWidget{
       child: SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        //crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
 
           Container(
@@ -50,21 +50,15 @@ class Screen2 extends StatelessWidget{
             ),
           ),
           Text(
-            "Food",
+            "兒童餐優惠期限：12/24-12/31",textAlign: TextAlign.center,
             // style: Theme.of(context).textTheme.display1.apply(
             //   fontWeightDelta: 2,
             //   color: Colors.black,
             // ),
-            style: TextStyle(color:Colors.redAccent,
-                fontSize: 20,
-                fontWeight: FontWeight.w500),
+            style: TextStyle(color:Colors.blueAccent,
+                fontSize: 24,
+                fontWeight: FontWeight.bold),
           ),
-
-          Text("Delivery",
-              // style:Theme.of(context).textTheme.display1.copyWith(height: .9)),
-            style: TextStyle(color:Colors.redAccent,
-                fontSize: 20,
-                fontWeight: FontWeight.w500)),
           SizedBox(
             height: 15,
           ),
@@ -84,17 +78,14 @@ class Screen2 extends StatelessWidget{
           //   height: 81,
           //   child: CategoryContainer(),
           // ),
-          SizedBox(
-            height: 15,
-          ),
           Text(
-            "FOOD LIST",
-            // style: Theme.of(context).textTheme.title.apply(
-            //   fontWeightDelta: 2,
-            // ),
+              "~~~ MENU ~~~",textAlign: TextAlign.start,
+              // style: Theme.of(context).textTheme.title.apply(
+              //   fontWeightDelta: 2,
+              // ),
               style: TextStyle(color:Colors.redAccent,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500)
+                  fontSize: 24,
+                  fontWeight: FontWeight.w900)
           ),
           SizedBox(
             height: 11,
@@ -149,7 +140,7 @@ class ProductContainer extends StatelessWidget {
                 // ),
                   style: TextStyle(color:Colors.redAccent,
                       fontSize: 20,
-                      fontWeight: FontWeight.w500)
+                      fontWeight: FontWeight.w900)
               ),
             ),
             SizedBox(
@@ -189,7 +180,7 @@ class ProductContainer extends StatelessWidget {
                 //     .copyWith(color: Colors.white),
                   style: TextStyle(color:Colors.redAccent,
                       fontSize: 20,
-                      fontWeight: FontWeight.w500)
+                      fontWeight: FontWeight.w900)
               ),
             )
           ],

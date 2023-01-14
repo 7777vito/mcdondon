@@ -51,10 +51,10 @@ class _Screen3State extends State<Screen3> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    "My Order",
+                    "我的訂單",
                     style: TextStyle(color:Colors.redAccent,
                         fontSize: 20,
-                        fontWeight: FontWeight.w500),
+                        fontWeight: FontWeight.w900),
                   ),
                   SizedBox(
                     height: 5.0,
@@ -77,7 +77,7 @@ class _Screen3State extends State<Screen3> {
                               "${productsList[id].title}",
                               style: TextStyle(color:Colors.redAccent,
                                   fontSize: 20,
-                                  fontWeight: FontWeight.w500),
+                                  fontWeight: FontWeight.w900),
                             ),
                             subtitle: Padding(
                               padding: const EdgeInsets.symmetric(
@@ -103,16 +103,16 @@ class _Screen3State extends State<Screen3> {
                               child: Icon(Icons.dashboard),
                             ),
                             title: Text(
-                              "Delivery",
+                              "服務費",
                               style: TextStyle(color:Colors.redAccent,
                                   fontSize: 20,
-                                  fontWeight: FontWeight.w500),
+                                  fontWeight: FontWeight.w900),
                             ),
                             trailing: Text((productsList.map((element)=>element.amount*element.price).fold(0, (previous, current) => previous+ current)==0)?("\$0"):(
                                 "\$30"),
                               style: TextStyle(color:Colors.redAccent,
                                   fontSize: 20,
-                                  fontWeight: FontWeight.w500),
+                                  fontWeight: FontWeight.w900),
                             ),
                           ),
                         ),
@@ -134,10 +134,10 @@ class _Screen3State extends State<Screen3> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[//這裡有問題 假設手機螢幕較小 會因為上下間距小 payment上下無法升縮 有被擠壓
                   Text(
-                    "Payment",
+                    "付費方式確認",
                     style: TextStyle(color:Colors.redAccent,
                         fontSize: 20,
-                        fontWeight: FontWeight.w500),
+                        fontWeight: FontWeight.w900),
                   ),
                   Expanded(
                     child: Container(
@@ -220,10 +220,10 @@ class _Screen3State extends State<Screen3> {
                     width: double.infinity,
                     child: ElevatedButton(
                       child: Text(
-                        "Confirm Payment",
+                        "確定結帳",
                         style: TextStyle(color:Colors.redAccent,
                             fontSize: 20,
-                            fontWeight: FontWeight.w500)),
+                            fontWeight: FontWeight.w900)),
                       onPressed: () {},
                       //style:ButtonStyle(backgroundColor:MaterialStatePropertyAll<Color>(Colors.green)),
                       style: ElevatedButton.styleFrom(

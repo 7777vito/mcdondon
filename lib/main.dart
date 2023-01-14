@@ -66,7 +66,7 @@ class MyHomePageState extends State<MyHomePage> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Swipeable button view demo'),
+      appBar: AppBar(title: Text('Mcdondon Restaurant'),
         centerTitle: true,),
       body: Stack(
         alignment: Alignment.bottomCenter,
@@ -77,10 +77,12 @@ class MyHomePageState extends State<MyHomePage> {
             width: double.infinity,),
           Padding(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 25),
             child: SwipeableButtonView(
-              buttonText: "Slide to unlock",
+              buttonText: "滑動按鈕以解鎖",
+              buttontextstyle: TextStyle(fontSize: 24.0,color: Colors.white,fontWeight: FontWeight.w900),
+
               buttonWidget: Container(child: Icon(Icons.arrow_forward_ios_rounded,
                 color: Colors.grey,),),
-              activeColor: Color(0xff3398F6),
+              activeColor: Colors.black54,
               isFinished: isFinished,
               onWaitingProcess: () {
                 Future.delayed(Duration(seconds: 0), () {
