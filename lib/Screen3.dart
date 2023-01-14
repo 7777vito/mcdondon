@@ -4,6 +4,8 @@ import 'package:mcdondon/counter.dart';
 import 'package:flutter/foundation.dart';
 
 class Screen3 extends StatefulWidget {
+  //bool showreturn=false;
+  //Screen3({Key? key, bool showreturn=false}) : super(key: key);
   @override
   State<Screen3> createState() => _Screen3State();
 }
@@ -21,17 +23,27 @@ class _Screen3State extends State<Screen3> {
       // appBar: AppBar(
       //   elevation: 0,
       //   backgroundColor: Colors.white,
-      //   leading: IconButton(
-      //     icon: Icon(
-      //       Icons.chevron_left,
-      //       color: Colors.black,//在此放入迷因
-      //     ),
-      //     onPressed: () => Navigator.pop(context),
-      //   ),
+      //   leading:IconButton(
+      //               icon: Icon(
+      //                 Icons.chevron_left,
+      //                 color: Colors.black,
+      //               ),
+      //               onPressed: () => Navigator.pop(context),
+      //             ),
       // ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          // Visibility(
+          //   visible: widget.showreturn,
+          //   child: IconButton(
+          //     icon: Icon(
+          //       Icons.chevron_left,
+          //       color: Colors.black,
+          //     ),
+          //     onPressed: () => Navigator.pop(context),
+          //   ),
+          // ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 11.0),

@@ -125,7 +125,7 @@ class _ProductContainerState extends State<ProductContainer> {
       ),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.yellow,
+          color: Colors.yellow[100],
           borderRadius: BorderRadius.circular(15.0),
         ),
         child: Column(

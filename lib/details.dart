@@ -23,7 +23,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.yellow,
+        backgroundColor: Colors.yellow[100],
         body: Column(
           children: <Widget>[
             Expanded(

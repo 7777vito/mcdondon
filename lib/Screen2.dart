@@ -34,7 +34,6 @@ class Screen2 extends StatelessWidget{
 
           Container(
             margin: const EdgeInsets.all(10.0),
-            color: Colors.amber[600],
             width: 350.0,
             height: 150.0,
             child: Swiper(
@@ -134,7 +133,7 @@ class ProductContainer extends StatelessWidget {
       ),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.yellow,
+          color: Colors.yellow[100],
           borderRadius: BorderRadius.circular(15.0),
         ),
         child: Column(
